@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
+import { CameraPage } from './home/camera/camera.page';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,10 @@ export const routes: Routes = [
   {
     path: 'network',
     component: NetworkPage
+  },
+  {
+    path: 'camera',
+    component: CameraPage
   },
 ];
 

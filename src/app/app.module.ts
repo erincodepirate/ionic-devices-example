@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
+import { CameraPage } from './home/camera/camera.page';
 
 @NgModule({
-  declarations: [AppComponent, HomePage, NetworkPage],
+  declarations: [AppComponent, HomePage, NetworkPage, CameraPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
