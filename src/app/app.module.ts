@@ -11,9 +11,10 @@ import { CommonModule } from '@angular/common';
 import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
+import { ContactsPage } from './home/contacts/contacts.page';
 
 @NgModule({
-  declarations: [AppComponent, HomePage, NetworkPage, CameraPage],
+  declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

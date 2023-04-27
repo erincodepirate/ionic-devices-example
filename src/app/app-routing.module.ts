@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
+import { ContactsPage } from './home/contacts/contacts.page';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,10 @@ export const routes: Routes = [
     path: 'camera',
     component: CameraPage
   },
+  {
+    path: 'contacts',
+    component: ContactsPage
+  }
 ];
 
 @NgModule({
