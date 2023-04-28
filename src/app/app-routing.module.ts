@@ -4,6 +4,7 @@ import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
 import { ContactsPage } from './home/contacts/contacts.page';
+import { NotificationsPage } from './home/notifications/notifications.page';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsPage
+  },
+  {
+    path: 'notifications',
+    component: NotificationsPage
   }
 ];
 

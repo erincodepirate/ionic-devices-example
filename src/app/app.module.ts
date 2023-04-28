@@ -12,9 +12,10 @@ import { HomePage } from './home/home.page';
 import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
 import { ContactsPage } from './home/contacts/contacts.page';
+import { NotificationsPage } from './home/notifications/notifications.page';
 
 @NgModule({
-  declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage],
+  declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage, NotificationsPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
