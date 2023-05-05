@@ -5,6 +5,7 @@ import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
 import { ContactsPage } from './home/contacts/contacts.page';
 import { NotificationsPage } from './home/notifications/notifications.page';
+import { StuffPage } from './home/stuff/stuff.page';
 
 export const routes: Routes = [
   {
@@ -31,6 +32,10 @@ export const routes: Routes = [
   {
     path: 'notifications',
     component: NotificationsPage
+  },
+  {
+    path: 'stuff',
+    component: StuffPage
   }
 ];
 

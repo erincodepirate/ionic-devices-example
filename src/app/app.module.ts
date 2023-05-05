@@ -13,9 +13,10 @@ import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
 import { ContactsPage } from './home/contacts/contacts.page';
 import { NotificationsPage } from './home/notifications/notifications.page';
+import { StuffPage } from './home/stuff/stuff.page';
 
 @NgModule({
-  declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage, NotificationsPage],
+  declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage, NotificationsPage, StuffPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
