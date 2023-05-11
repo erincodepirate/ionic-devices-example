@@ -29,3 +29,11 @@
 ion-col {
   height: 100px;
 }
+
+ion-segment {
+  --background: var(--ion-color-primary-contrast);
+  ion-segment-button {
+    --indicator-color: var(--ion-color-primary);
+    --color: var(--ion-color-dark);
+  }
+}

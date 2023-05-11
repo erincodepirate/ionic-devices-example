@@ -8,6 +8,8 @@ import { Share } from '@capacitor/share';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  type = "native";
+
   constructor() {}
 
   async share() {
@@ -17,5 +19,10 @@ export class HomePage {
       url: 'http://ionicframework.com/',
       dialogTitle: 'Share with buddies',
     });
+  }
+
+  segmentChanged($event:any) {
+    console.log($event.detail.value);
+    this.type = $event.detail.value;
   }
 }

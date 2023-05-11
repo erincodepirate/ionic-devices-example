@@ -1,8 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Native Plugins
+      <!--Native Plugins-->
     </ion-title>
+    <ion-segment (ionChange)="segmentChanged($event)" [value]="type">
+      <ion-segment-button value="native">
+        <ion-label>Native Plugins</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="components">
+        <ion-label>Components</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +21,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid fixed="true">
+  <ion-grid fixed="true" *ngIf="type == 'native'">
     <ion-row>
       <ion-col size="6" sizeLg="4" pull="2" offset="3" offsetSm="2">
         <ion-card color="primary">
@@ -63,6 +71,8 @@
         </ion-card>
       </ion-col>
     </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="type == 'components'">
     <ion-row>
       <ion-col class="ion-justify-content-start">
         ion-col [start]
