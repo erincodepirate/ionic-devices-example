@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy, RouterModule } from '@angular/router';
+import { RouteReuseStrategy, RouterModule, Scroll } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -13,11 +13,12 @@ import { NetworkPage } from './home/network/network.page';
 import { CameraPage } from './home/camera/camera.page';
 import { ContactsPage } from './home/contacts/contacts.page';
 import { NotificationsPage } from './home/notifications/notifications.page';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { StuffPage } from './home/stuff/stuff.page';
 
 @NgModule({
   declarations: [AppComponent, HomePage, NetworkPage, CameraPage, ContactsPage, NotificationsPage, StuffPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, ScrollingModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

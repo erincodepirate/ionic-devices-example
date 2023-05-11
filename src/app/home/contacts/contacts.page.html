@@ -22,9 +22,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
+  <!--<ion-list>
     <ion-item *ngFor="let contact of contacts">
       {{contact?.name?.display}}
     </ion-item>
-  </ion-list>
+  </ion-list>-->
+  <!--<ion-virtual-scroll [items]="contacts" approxItemHeight="50px">
+    <ion-item>
+      {{contact?.name}}
+    </ion-item>
+  </ion-virtual-scroll>-->
+  <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="900" maxBufferPx="1350">
+    <ion-list>
+      <ion-item *cdkVirtualFor="let contact of contacts">
+        <ion-label> {{contact.name }} </ion-label>
+      </ion-item>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
 </ion-content>
