@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Contacts } from '@capacitor-community/contacts';
-import { isPlatform } from '@ionic/angular';
+import { isPlatform, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-contacts',
@@ -10,6 +10,7 @@ import { isPlatform } from '@ionic/angular';
 })
 export class ContactsPage implements OnInit, OnDestroy {
   isLoading = true;
+
   contacts: any[] = [
       {
         "id": 1,
@@ -192,14 +193,29 @@ export class ContactsPage implements OnInit, OnDestroy {
         "phone": "+1 (885) 461-3054"
       }
     ];
+  loading: HTMLIonLoadingElement | undefined;
 
-  constructor() {
+  constructor(public loadingCtrl: LoadingController) {
 
   }
 
   ngOnInit() {
-    setTimeout(()=>{this.isLoading = false}, 1000)
+    this.prsentLoading();
+    setTimeout(()=>{
+      this.isLoading = false
+      this.loading?.dismiss();
+    }, 1000)
     //this.getContacts();
+  }
+
+  async prsentLoading() {
+    this.loading = await this.loadingCtrl.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 2000,
+      backdropDismiss: true
+    });
+    await this.loading.present();
   }
 
   ngOnDestroy() {
