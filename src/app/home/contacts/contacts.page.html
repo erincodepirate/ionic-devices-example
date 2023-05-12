@@ -36,8 +36,8 @@
   </ion-virtual-scroll>-->
   <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="900" maxBufferPx="1350" *ngIf="!isLoading">
     <ion-list>
-      <ion-item *cdkVirtualFor="let contact of contacts">
-        <ion-label> {{contact.name }} </ion-label>
+      <ion-item *cdkVirtualFor="let contact of contacts" >
+        <ion-label (click)="presentActionSheet(contact)"> {{contact.name }} </ion-label>
       </ion-item>
     </ion-list>
   </cdk-virtual-scroll-viewport>

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Contacts } from '@capacitor-community/contacts';
-import { isPlatform, LoadingController } from '@ionic/angular';
+import { ActionSheetController, isPlatform, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-contacts',
@@ -195,7 +195,7 @@ export class ContactsPage implements OnInit, OnDestroy {
     ];
   loading: HTMLIonLoadingElement | undefined;
 
-  constructor(public loadingCtrl: LoadingController) {
+  constructor(public loadingCtrl: LoadingController, public actionSheetCtrl: ActionSheetController) {
 
   }
 
@@ -237,6 +237,39 @@ export class ContactsPage implements OnInit, OnDestroy {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  async presentActionSheet(contact: any) {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Actions',
+      buttons: [
+        {
+          text: 'Call',
+          role: 'destructive',
+          icon: 'call',
+          handler: () => {
+            console.log('call clicked');
+          }
+        },
+        {
+          text: 'Edit',
+          icon: 'create',
+          handler: () => {
+            console.log('edit clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          icon: 'close',
+          handler: () => {
+            console.log('cancel clicked');
+          }
+        },
+      ],
+    });
+
+    await actionSheet.present();
   }
 
 }
