@@ -9,7 +9,7 @@ import { isPlatform } from '@ionic/angular';
   styleUrls: ['./contacts.page.scss'],
 })
 export class ContactsPage implements OnInit, OnDestroy {
-
+  isLoading = true;
   contacts: any[] = [
       {
         "id": 1,
@@ -198,6 +198,7 @@ export class ContactsPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    setTimeout(()=>{this.isLoading = false}, 1000)
     //this.getContacts();
   }
 
